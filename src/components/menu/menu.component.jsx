@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MenuItem } from '../../components/menu-item/menu-item.component';
+import MenuItem from '../../components/menu-item/menu-item.component';
 
 import './menu.styles.scss';
 
@@ -50,8 +50,8 @@ class MenuContainer extends React.Component {
         return (
             <div className='menu'>
             {
-                this.state.sections.map(({title, imageUrl, id, size}) => (
-                    <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+                this.state.sections.map(({ id, ...othersSectionProps }) => (
+                    <MenuItem key={id} {...othersSectionProps} />
                 ))
             }
         </div>
